@@ -1,0 +1,293 @@
+% Mean Filter PSNR vs Noise Density
+%{
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+y1 = [-41.9986,-42.7597,-43.1545,-43.4964,-43.788];
+y2 = [-43.5497,-43.7444,-43.9406,-44.1209,-44.3017];
+y3 = [-44.2523,-44.3157,-44.4746,-44.5959,-44.6069];
+y4 = [-41.4059,-42.0497,-42.5527,-43.0022,-43.4436];
+y5 = [-46.8654,-46.706,-46.5489,-46.3474,-46.1603];
+y6 = [-42.8303,-43.1396,-43.4535,-43.7246,-43.9885];
+y7 = [-46.0455,-45.9546,-45.8599,-45.7543,-45.6668];
+y8 = [-40.504,-41.3239,-42.025,-42.6143,-43.1456];
+y9 = [-43.4827,-43.6911,-43.9088,-44.0834,-44.2837];
+y10 = [-40.5449,-41.3557,-42.0352,-42.6343,-43.123];
+
+plot(noise_density,y1);
+hold on;
+plot(noise_density,y2);
+hold on;
+plot(noise_density,y3);
+hold on;
+plot(noise_density,y4);
+hold on;
+plot(noise_density,y5);
+hold on;
+plot(noise_density,y6);
+hold on;
+plot(noise_density,y7);
+hold on;
+plot(noise_density,y8);
+hold on;
+plot(noise_density,y9);
+hold on;
+plot(noise_density,y10);
+title("Mean Filter");
+xlabel("Noise Density");
+ylabel("PSNR");
+axis([0.1 0.5 -50 -30]);
+%}
+
+% Median Filter PSNR vs Noise Density
+%{
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+y1 = [15.5877,12.6078,10.7936,9.5443,8.5712];
+y2 = [15.6222,12.6554,10.9029,9.6458,8.603];
+y3 = [13.844,11.5712,10.1861,9.0562,8.0595];
+y4 = [14.9515,11.8563,10.1229,8.9345,7.8965];
+y5 = [12.6061,10.3311,8.9377,7.7464,6.92];
+y6 = [15.1467,12.1082,10.3688,9.127,8.0885];
+y7 = [14.2564,11.3461,9.5995,8.3529,7.4479];
+y8 = [15.0514,12.0552,10.2836,9.021,8.0678];
+y9 = [15.2931,12.3773,10.6351,9.3715,8.3471];
+y10 = [14.5119,11.5351,9.8275,8.5961,7.6436];
+
+plot(noise_density,y1);
+hold on;
+plot(noise_density,y2);
+hold on;
+plot(noise_density,y3);
+hold on;
+plot(noise_density,y4);
+hold on;
+plot(noise_density,y5);
+hold on;
+plot(noise_density,y6);
+hold on;
+plot(noise_density,y7);
+hold on;
+plot(noise_density,y8);
+hold on;
+plot(noise_density,y9);
+hold on;
+plot(noise_density,y10);
+title("Median Filter");
+xlabel("Noise Density");
+ylabel("PSNR");
+%}
+
+% Adaptive Filter PSNR vs Noise Density
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+y1 = [17.9347,14.3038,12.2007,10.785,9.7282];
+y2 = [17.7809,14.2772,12.2311,10.8286,9.7131];
+y3 = [15.2867,12.8295,11.3165,10.1919,9.2057];
+y4 = [17.5198,13.8983,11.8501,10.4713,9.3906];
+y5 = [15.3103,12.4951,10.8335,9.5271,8.6578];
+y6 = [17.6546,13.9911,12.0266,10.6234,9.5263];
+y7 = [17.0138,13.4909,11.4923,10.1396,9.1653];
+y8 = [17.7894,14.0691,11.9641,10.5567,9.4884];
+y9 = [17.5961,14.0658,12.0441,10.6876,9.5815];
+y10 = [17.2403,13.588,11.6123,10.2775,9.2754];
+
+plot(noise_density,y1);
+hold on;
+plot(noise_density,y2);
+hold on;
+plot(noise_density,y3);
+hold on;
+plot(noise_density,y4);
+hold on;
+plot(noise_density,y5);
+hold on;
+plot(noise_density,y6);
+hold on;
+plot(noise_density,y7);
+hold on;
+plot(noise_density,y8);
+hold on;
+plot(noise_density,y9);
+hold on;
+plot(noise_density,y10);
+title("Adaptive Filter");
+xlabel("Noise Density");
+ylabel("PSNR");
+
+
+%{
+%apple.png
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+mean_PSNR = [-41.9986,-42.7597,-43.1545,-43.4964,-43.788];
+medain_PSNR = [15.5877,12.6078,10.7936,9.5443,8.5712];
+adaptive_PSNR = [17.9347,14.3038,12.2007,10.785,9.7282];
+plot(noise_density,mean_PSNR);
+hold on;
+plot(noise_density,medain_PSNR);
+hold on;
+plot(noise_density,adaptive_PSNR);
+title("apple.png");
+xlabel("Noise Density");
+ylabel("PSNR");
+axis([0.1 0.5 -50 20]);
+legend('Mean','Median','Adaptive');
+%}
+
+%{
+%dog.jpg
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+mean_PSNR = [-43.5497,-43.7444,-43.9406,-44.1209,-44.3017];
+medain_PSNR = [15.6222,12.6554,10.9029,9.6458,8.603];
+adaptive_PSNR = [17.7809,14.2772,12.2311,10.8286,9.7131];
+plot(noise_density,mean_PSNR);
+hold on;
+plot(noise_density,medain_PSNR);
+hold on;
+plot(noise_density,adaptive_PSNR);
+title("dog.jpg");
+xlabel("Noise Density");
+ylabel("PSNR");
+axis([0.1 0.5 -50 20]);
+legend('Mean','Median','Adaptive');
+%}
+
+%{
+%city.jpg
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+mean_PSNR = [-44.2523,-44.3157,-44.4746,-44.5959,-44.6069];
+medain_PSNR = [13.844,11.5712,10.1861,9.0562,8.0595];
+adaptive_PSNR = [15.2867,12.8295,11.3165,10.1919,9.2057];
+plot(noise_density,mean_PSNR);
+hold on;
+plot(noise_density,medain_PSNR);
+hold on;
+plot(noise_density,adaptive_PSNR);
+title("city.jpg");
+xlabel("Noise Density");
+ylabel("PSNR");
+axis([0.1 0.5 -50 20]);
+legend('Mean','Median','Adaptive');
+%}
+
+%{
+%flower.png
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+mean_PSNR = [-41.4059,-42.0497,-42.5527,-43.0022,-43.4436];
+medain_PSNR = [14.9515,11.8563,10.1229,8.9345,7.8965];
+adaptive_PSNR = [17.5198,13.8983,11.8501,10.4713,9.3906];
+plot(noise_density,mean_PSNR);
+hold on;
+plot(noise_density,medain_PSNR);
+hold on;
+plot(noise_density,adaptive_PSNR);
+title("flower.png");
+xlabel("Noise Density");
+ylabel("PSNR");
+axis([0.1 0.5 -50 20]);
+legend('Mean','Median','Adaptive');
+%}
+
+%{
+%calc.bmp
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+mean_PSNR = [-46.8654,-46.706,-46.5489,-46.3474,-46.1603];
+medain_PSNR = [12.6061,10.3311,8.9377,7.7464,6.92];
+adaptive_PSNR = [15.3103,12.4951,10.8335,9.5271,8.6578];
+plot(noise_density,mean_PSNR);
+hold on;
+plot(noise_density,medain_PSNR);
+hold on;
+plot(noise_density,adaptive_PSNR);
+title("calc.bmp");
+xlabel("Noise Density");
+ylabel("PSNR");
+axis([0.1 0.5 -50 20]);
+legend('Mean','Median','Adaptive');
+%}
+
+%{
+%cameraman.png
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+mean_PSNR = [-42.8303,-43.1396,-43.4535,-43.7246,-43.9885];
+medain_PSNR = [15.1467,12.1082,10.3688,9.127,8.0885];
+adaptive_PSNR = [17.6546,13.9911,12.0266,10.6234,9.5263];
+plot(noise_density,mean_PSNR);
+hold on;
+plot(noise_density,medain_PSNR);
+hold on;
+plot(noise_density,adaptive_PSNR);
+title("camerman.png");
+xlabel("Noise Density");
+ylabel("PSNR");
+axis([0.1 0.5 -50 20]);
+legend('Mean','Median','Adaptive');
+%}
+
+%{
+%coin.png
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+mean_PSNR = [-46.0455,-45.9546,-45.8599,-45.7543,-45.6668];
+medain_PSNR = [14.2564,11.3461,9.5995,8.3529,7.4479];
+adaptive_PSNR = [17.0138,13.4909,11.4923,10.1396,9.1653];
+plot(noise_density,mean_PSNR);
+hold on;
+plot(noise_density,medain_PSNR);
+hold on;
+plot(noise_density,adaptive_PSNR);
+title("coin.png");
+xlabel("Noise Density");
+ylabel("PSNR");
+axis([0.1 0.5 -50 20]);
+legend('Mean','Median','Adaptive');
+%}
+
+%{
+%fruits.png
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+mean_PSNR = [-40.504,-41.3239,-42.025,-42.6143,-43.1456];
+medain_PSNR = [15.0514,12.0552,10.2836,9.021,8.0678];
+adaptive_PSNR = [17.7894,14.0691,11.9641,10.5567,9.4884];
+plot(noise_density,mean_PSNR);
+hold on;
+plot(noise_density,medain_PSNR);
+hold on;
+plot(noise_density,adaptive_PSNR);
+title("fruits.png");
+xlabel("Noise Density");
+ylabel("PSNR");
+axis([0.1 0.5 -50 20]);
+legend('Mean','Median','Adaptive');
+%}
+
+%{
+%girl.png
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+mean_PSNR = [-43.4827,-43.6911,-43.9088,-44.0834,-44.2837];
+medain_PSNR = [15.2931,12.3773,10.6351,9.3715,8.3471];
+adaptive_PSNR = [17.5961,14.0658,12.0441,10.6876,9.5815];
+plot(noise_density,mean_PSNR);
+hold on;
+plot(noise_density,medain_PSNR);
+hold on;
+plot(noise_density,adaptive_PSNR);
+title("girl.png");
+xlabel("Noise Density");
+ylabel("PSNR");
+axis([0.1 0.5 -50 20]);
+legend('Mean','Median','Adaptive');
+%}
+
+%{
+%teddy.png
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+mean_PSNR = [-40.5449,-41.3557,-42.0352,-42.6343,-43.123];
+medain_PSNR = [14.5119,11.5351,9.8275,8.5961,7.6436];
+adaptive_PSNR = [17.2403,13.588,11.6123,10.2775,9.2754];
+plot(noise_density,mean_PSNR);
+hold on;
+plot(noise_density,medain_PSNR);
+hold on;
+plot(noise_density,adaptive_PSNR);
+title("teddy.png");
+xlabel("Noise Density");
+ylabel("PSNR");
+axis([0.1 0.5 -50 20]);
+legend('Mean','Median','Adaptive');
+%}
