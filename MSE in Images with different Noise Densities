@@ -1,0 +1,288 @@
+% Mean Filter MSE vs Noise Density
+%{
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+y1 = [15521.3323,15521.7937,15522.0326,15522.4862,15523.1609];
+y2 = [21520.431,21523.3163,21525.9258,21528.8063,21531.5286];
+y3 = [25986.9211,25992.6877,25995.3779,25999.3201,26007.0402];
+y4 = [11765.4329,11765.3101,11765.7862,11766.073,11766.2148];
+y5 = [50402.1655,50418.8216,50434.5337,50453.2893,50470.1298];
+y6 = [17725.2575,17727.6536,17729.3963,17731.5734,17733.9247];
+y7 = [41177.5404,41189.9395,41202.6286,41215.7407,41227.6037];
+y8 = [8873.475,8872.3019,8871.1207,8870.0923,8868.6785];
+y9 = [21144.9452,21147.9426,21150.7207,21154.0273,21156.8504];
+y10 = [8980.5531,8980.4333,8980.0944,8979.7064,8979.5557];
+
+plot(noise_density,y1);
+hold on;
+plot(noise_density,y2);
+hold on;
+plot(noise_density,y3);
+hold on;
+plot(noise_density,y4);
+hold on;
+plot(noise_density,y5);
+hold on;
+plot(noise_density,y6);
+hold on;
+plot(noise_density,y7);
+hold on;
+plot(noise_density,y8);
+hold on;
+plot(noise_density,y9);
+hold on;
+plot(noise_density,y10);
+title("Mean Filter");
+xlabel("Noise Density");
+ylabel("MSE");
+%axis([0.1 0.5 -50 -30]);
+%}
+
+%{
+% Median Filter MSE vs Noise Density
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+y1 = [19.5767,61.8964,257.9549,788.7545,1854.888];
+y2 = [21.9841,76.005,276.3716,807.2472,1852.8606];
+y3 = [1013.028,1252.26,1626.8004,2351.7307,3693.6145];
+y4 = [27.746,88.4035,311.234,945.6405,2181.0112];
+y5 = [1137.2529,1287.3886,1599.2727,2542.1169,4212.9889];
+y6 = [20.4517,85.7807,324.227,888.5931,2145.5537];
+y7 = [36.0052,144.198,470.0687,1212.9622,2671.8093];
+y8 = [8.241,48.8204,258.3645,827.4185,2026.2262];
+y9 = [80.7406,145.8086,366.8447,933.9778,2092.8917];
+y10 = [68.6531,133.1643,377.8653,1017.1356,2232.2812];
+
+plot(noise_density,y1);
+hold on;
+plot(noise_density,y2);
+hold on;
+plot(noise_density,y3);
+hold on;
+plot(noise_density,y4);
+hold on;
+plot(noise_density,y5);
+hold on;
+plot(noise_density,y6);
+hold on;
+plot(noise_density,y7);
+hold on;
+plot(noise_density,y8);
+hold on;
+plot(noise_density,y9);
+hold on;
+plot(noise_density,y10);
+title("Median Filter");
+xlabel("Noise Density");
+ylabel("MSE");
+%}
+
+%{
+% Adaptive Filter MSE vs Noise Density
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+y1 = [333.2257,473.985,648.0579,822.9043,1007.2683];
+y2 = [310.136,469.716,606.6502,781.2058,961.2606];
+y3 = [1074.4141,1476.8727,1756.4129,2087.9774,2578.1752];
+y4 = [433.8503,732.7174,1041.92,1399.1174,1881.5022];
+y5 = [1091.366,1636.4608,2209.3184,3055.7835,3989.1455];
+y6 = [433.3724,671.7655,964.4407,1270.2902,1676.6293];
+y7 = [562.322,916.9006,1388.8321,1990.7407,2675.6274];
+y8 = [424.9978,635.2342,898.0839,1234.5972,1616.1391];
+y9 = [391.3787,581.729,809.3333,1067.2718,1349.7358];
+y10 = [539.9732,872.1158,1244.3198,1740.6458,2255.6495];
+
+plot(noise_density,y1);
+hold on;
+plot(noise_density,y2);
+hold on;
+plot(noise_density,y3);
+hold on;
+plot(noise_density,y4);
+hold on;
+plot(noise_density,y5);
+hold on;
+plot(noise_density,y6);
+hold on;
+plot(noise_density,y7);
+hold on;
+plot(noise_density,y8);
+hold on;
+plot(noise_density,y9);
+hold on;
+plot(noise_density,y10);
+title("Adaptive Filter");
+xlabel("Noise Density");
+ylabel("MSE");
+%}
+
+%{
+%apple.png
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+mean_MSE = [15521.3323,15521.7937,15522.0326,15522.4862,15523.1609];
+medain_MSE = [19.5767,61.8964,257.9549,788.7545,1854.888];
+adaptive_MSE = [333.2257,473.985,648.0579,822.9043,1007.2683];
+plot(noise_density,mean_MSE);
+hold on;
+plot(noise_density,medain_MSE);
+hold on;
+plot(noise_density,adaptive_MSE);
+title("apple.png");
+xlabel("Noise Density");
+ylabel("MSE");
+axis([0.1 0.5 -2000 16000]);
+legend('Mean','Median','Adaptive');
+%}
+
+%{
+%dog.jpg
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+mean_MSE = [21520.431,21523.3163,21525.9258,21528.8063,21531.5286];
+medain_MSE = [21.9841,76.005,276.3716,807.2472,1852.8606];
+adaptive_MSE = [310.136,469.716,606.6502,781.2058,961.2606];
+plot(noise_density,mean_MSE);
+hold on;
+plot(noise_density,medain_MSE);
+hold on;
+plot(noise_density,adaptive_MSE);
+title("dog.jpg");
+xlabel("Noise Density");
+ylabel("MSE");
+axis([0.1 0.5 -2000 22000]);
+legend('Mean','Median','Adaptive');
+%}
+
+%{
+%city.jpg
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+mean_MSE = [25986.9211,25992.6877,25995.3779,25999.3201,26007.0402];
+medain_MSE = [1013.028,1252.26,1626.8004,2351.7307,3693.6145];
+adaptive_MSE = [1074.4141,1476.8727,1756.4129,2087.9774,2578.1752];
+plot(noise_density,mean_MSE);
+hold on;
+plot(noise_density,medain_MSE);
+hold on;
+plot(noise_density,adaptive_MSE);
+title("city.jpg");
+xlabel("Noise Density");
+ylabel("MSE");
+axis([0.1 0.5 0 27000]);
+legend('Mean','Median','Adaptive');
+%}
+%{
+%flower.png
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+mean_MSE = [11765.4329,11765.3101,11765.7862,11766.073,11766.2148];
+medain_MSE = [27.746,88.4035,311.234,945.6405,2181.0112];
+adaptive_MSE = [433.8503,732.7174,1041.92,1399.1174,1881.5022];
+plot(noise_density,mean_MSE);
+hold on;
+plot(noise_density,medain_MSE);
+hold on;
+plot(noise_density,adaptive_MSE);
+title("flower.png");
+xlabel("Noise Density");
+ylabel("MSE");
+axis([0.1 0.5 -2000 16000]);
+legend('Mean','Median','Adaptive');
+%}
+
+%{
+%calc.bmp
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+mean_MSE = [50402.1655,50418.8216,50434.5337,50453.2893,50470.1298];
+medain_MSE = [1137.2529,1287.3886,1599.2727,2542.1169,4212.9889];
+adaptive_MSE = [1091.366,1636.4608,2209.3184,3055.7835,3989.1455];
+plot(noise_density,mean_MSE);
+hold on;
+plot(noise_density,medain_MSE);
+hold on;
+plot(noise_density,adaptive_MSE);
+title("calc.bmp");
+xlabel("Noise Density");
+ylabel("MSE");
+legend('Mean','Median','Adaptive');
+%}
+
+%{
+%cameraman.png
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+mean_MSE = [17725.2575,17727.6536,17729.3963,17731.5734,17733.9247];
+medain_MSE = [20.4517,85.7807,324.227,888.5931,2145.5537];
+adaptive_MSE = [433.3724,671.7655,964.4407,1270.2902,1676.6293];
+plot(noise_density,mean_MSE);
+hold on;
+plot(noise_density,medain_MSE);
+hold on;
+plot(noise_density,adaptive_MSE);
+title("cameraman.png");
+xlabel("Noise Density");
+ylabel("MSE");
+axis([0.1 0.5 -2000 19000]);
+legend('Mean','Median','Adaptive');
+%}
+%{
+%coin.png
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+mean_MSE = [41177.5404,41189.9395,41202.6286,41215.7407,41227.6037];
+medain_MSE = [36.0052,144.198,470.0687,1212.9622,2671.8093];
+adaptive_MSE = [562.322,916.9006,1388.8321,1990.7407,2675.6274];
+plot(noise_density,mean_MSE);
+hold on;
+plot(noise_density,medain_MSE);
+hold on;
+plot(noise_density,adaptive_MSE);
+title("coin.png");
+xlabel("Noise Density");
+ylabel("MSE");
+legend('Mean','Median','Adaptive');
+%}
+
+%{
+%fruits.png
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+mean_MSE = [8873.475,8872.3019,8871.1207,8870.0923,8868.6785];
+medain_MSE = [8.241,48.8204,258.3645,827.4185,2026.2262];
+adaptive_MSE = [424.9978,635.2342,898.0839,1234.5972,1616.1391];
+plot(noise_density,mean_MSE);
+hold on;
+plot(noise_density,medain_MSE);
+hold on;
+plot(noise_density,adaptive_MSE);
+title("fruits.png");
+xlabel("Noise Density");
+ylabel("MSE");
+axis([0.1 0.5 -2000 16000]);
+legend('Mean','Median','Adaptive');
+%}
+
+%{
+%girl.png
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+mean_MSE = [21144.9452,21147.9426,21150.7207,21154.0273,21156.8504];
+medain_MSE = [80.7406,145.8086,366.8447,933.9778,2092.8917];
+adaptive_MSE = [391.3787,581.729,809.3333,1067.2718,1349.7358];
+plot(noise_density,mean_MSE);
+hold on;
+plot(noise_density,medain_MSE);
+hold on;
+plot(noise_density,adaptive_MSE);
+title("girl.png");
+xlabel("Noise Density");
+ylabel("MSE");
+legend('Mean','Median','Adaptive');
+%}
+
+%teddy.png
+noise_density = [0.1,0.2,0.3,0.4,0.5];
+mean_MSE = [8980.5531,8980.4333,8980.0944,8979.7064,8979.5557];
+medain_MSE = [68.6531,133.1643,377.8653,1017.1356,2232.2812];
+adaptive_MSE = [539.9732,872.1158,1244.3198,1740.6458,2255.6495];
+plot(noise_density,mean_MSE);
+hold on;
+plot(noise_density,medain_MSE);
+hold on;
+plot(noise_density,adaptive_MSE);
+title("teddy.png");
+xlabel("Noise Density");
+ylabel("MSE");
+axis([0.1 0.5 -2000 10000]);
+legend('Mean','Median','Adaptive');
+
