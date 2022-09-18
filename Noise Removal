@@ -1,0 +1,72 @@
+%Salt and Pepper Noise
+
+RGB = imread('apple.png');
+%RGB = imread('calculator.bmp');
+%RGB = imread('cameraMan.png');
+%RGB = imread('coin.png');
+%RGB = imread('flower.png');
+%RGB = imread('fruits.png');S
+%RGB = imread('girl.png');
+%RGB = imread('grey.jpeg');
+%RGB = imread('mandril.bmp');
+%RGB = imread('teddy.png');
+%RGB = imread('tower.png');
+
+I = rgb2gray(RGB);
+figure
+imshow(I)
+title("Original Image")
+
+J = imnoise(I,'salt & pepper',0.3);
+figure
+imshow(J)
+title("Added Salt and Pepper noise")
+
+Kaverage = filter2(fspecial('average',3),J)/255;
+A=Kaverage;
+figure
+imshow(Kaverage)
+title("Average Filter")
+
+Kmedian = medfilt2(J);
+B=Kmedian;
+figure
+imshow(Kmedian)
+title("Median Filter")
+%imshowpair(Kaverage,Kmedian,'montage') %Compare avg and median
+
+K = wiener2(J,[5 5]);
+figure
+imshow(K);
+title("Image filtered using wiener2 filter")
+
+%{
+noisyPSNR = psnr(J,I);
+fprintf(" The PSNR of the noisy image is:\n");
+disp(noisyPSNR);
+%}
+
+a_denoisedPSNR = psnr(double(A), double(J));
+fprintf(" The PSNR of the image denoised using average filter is:\n");
+disp(a_denoisedPSNR);
+
+denoisedPSNR = psnr(B,J);
+fprintf(" The PSNR of the image denoised using median filter is:\n");
+disp(denoisedPSNR);
+
+denoisedPSNR = psnr(K,J);
+fprintf(" The PSNR of the image denoised using adaptive filter is:\n");
+disp(denoisedPSNR);
+
+%{
+%W.R.T original image and denoised image
+fprintf("The following are original image and denoised image MSE");
+err = immse(double(A), double(I));
+fprintf('\n The mean-squared error for average is %0.4f\n', err);
+
+err = immse(double(B), double(I));
+fprintf('\n The mean-squared error for median is %0.4f\n', err);
+
+err = immse(double(K), double(I));
+fprintf('\n The mean-squared error for Weiner is %0.4f\n', err);
+%}
